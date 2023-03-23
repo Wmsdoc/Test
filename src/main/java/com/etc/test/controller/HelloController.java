@@ -9,6 +9,6 @@ public class HelloController {
     @GetMapping("hello")
     public String hello(Model model){
         model.addAttribute("message", "Hello, Thymeleaf!");
-        return "Hello";
+        return "hello";
     }
 }

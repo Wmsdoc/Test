@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Thymeleaf Example</title>
+</head>
+<body>
+    <h1 th:text="${message}"></h1>
+    <p>显示当前时间</p>
+    <span th:text="${#dates.format(#dates.createNow(), 'yyyy-MM-dd HH:mm:ss')}"></span>
+</body>
+</html>
