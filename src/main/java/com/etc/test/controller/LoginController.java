@@ -3,16 +3,14 @@ package com.etc.test.controller;
 import com.etc.test.service.UserService;
 import jakarta.annotation.Resource;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class LoginController {
-    @Resource
+    @Autowired
     UserService userService;
-    @RequestMapping(value = "login",method = RequestMethod.GET)
+    @GetMapping("/login")
     public String dologin(@RequestParam("userName") String userName,@RequestParam("password") String password){
 
         return userService.login(userName, password);

@@ -1,22 +1,34 @@
 package com.etc.test.service.impl;
 
-import com.etc.test.dao.UserDao;
+import com.etc.test.mapper.UserMapper;
+import com.etc.test.entity.User;
 import com.etc.test.service.UserService;
-import jakarta.annotation.Resource;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-@Service("userService")
+import java.util.List;
+
+@Service
 public class UserServiceImpl implements UserService {
-    @Resource
-    private UserDao userDao;
+    @Autowired
+    private UserMapper userMapper;
+
+    @Override
+    public List<User> queryAll() {
+        return userMapper.queryAll();
+    }
 
     @Override
     public String login(String userName, String password) {
-        boolean result=userDao.login(userName, password);
-        if (result)
-        {
-            return "登录成功";
+        List<User> list = userMapper.queryAll();
+        for (User user : list) {
+            String name = user.getUserName();
+            String pass = user.getPassword();
+            System.out.println(name);
+            System.out.println(pass);
+            if (userName.equals(name)&&password.equals(pass))
+                return "登录成功";
         }
         return "用户名或密码错误";
     }
