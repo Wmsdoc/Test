@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class ErrorThrowAspect {
     private final static Logger logger = LoggerFactory.getLogger(ErrorThrowAspect.class);
-    @Pointcut
+    @Pointcut("execution(public * com.etc.test.service.*.*(..))")
     public void error() {
     }
     @Around("error()")

@@ -1,8 +1,6 @@
 package com.etc.test.exception.enums;
 
-import com.sun.org.apache.xpath.internal.FoundIndex;
 import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.Getter;
 
 @Getter
