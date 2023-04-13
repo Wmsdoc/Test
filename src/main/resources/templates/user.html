@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>user</title>
+</head>
+<body>
+<br/>
+<br/><br/>
+<div class="with:80%">
+    <table>
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>userName</th>
+            <th>password</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!--each来进行for循环求值-->
+        <tr  th:each="user : ${userList}">
+            <th scope="row" th:text="${user.userId}"></th>
+            <td th:text="${user.userName}"></td>
+            <td th:text="${user.password}"></td>
+            <td>
+                <a class="btn btn-primary" th:href="@{'/update/'+${user.userId}}">更改</a>
+                <a class="btn btn-danger" th:href="@{'/delete/'+${user.userId}}">删除</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

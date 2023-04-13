@@ -7,5 +7,31 @@ import java.util.List;
 
 @Mapper
 public interface UserMapper {
+    /**
+     * 查询所有用户
+     *
+     * @return
+     */
     List<User> queryAll();
+
+    /**
+     * 增加用户
+     *
+     * @return
+     */
+    int insert(User user);
+
+    /**
+     * 修改用户
+     *
+     * @return
+     */
+    int update(User user);
+
+    /**
+     * 删除用户
+     *
+     * @return
+     */
+    int delete(int userId);
 }

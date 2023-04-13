@@ -1,5 +1,6 @@
 package com.etc.test.service.impl;
 
+import com.etc.test.entity.JsonResult;
 import com.etc.test.mapper.UserMapper;
 import com.etc.test.entity.User;
 import com.etc.test.service.UserService;
@@ -20,7 +21,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public String login(String userName, String password) {
+    public Boolean login(String userName, String password) {
         List<User> list = userMapper.queryAll();
         for (User user : list) {
             String name = user.getUserName();
@@ -28,8 +29,25 @@ public class UserServiceImpl implements UserService {
             System.out.println(name);
             System.out.println(pass);
             if (userName.equals(name)&&password.equals(pass))
-                return "登录成功";
+                return true;
         }
-        return "用户名或密码错误";
+        return false;
     }
+
+    @Override
+    public int insert(User user) {
+        return userMapper.insert(user);
+    }
+
+    @Override
+    public int update(User user) {
+        return userMapper.update(user);
+    }
+
+    @Override
+    public int delete(int userId) {
+        return userMapper.delete(userId);
+    }
+
+
 }
