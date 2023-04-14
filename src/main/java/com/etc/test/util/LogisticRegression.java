@@ -1,11 +1,13 @@
 package com.etc.test.util;
 
+import lombok.Data;
 import org.apache.commons.math3.linear.ArrayRealVector;
 import org.apache.commons.math3.linear.RealVector;
 
 import java.util.Arrays;
 
 //逻辑回归算法
+@Data
 public class LogisticRegression {
     private double threshold = 0.5; // 阈值，默认为0.5
     private double learningRate = 0.1; // 学习率，默认为0.1
@@ -67,35 +69,4 @@ public class LogisticRegression {
         return 1.0 / (1.0 + Math.exp(-z));
     }
 
-    public double getThreshold() {
-        return threshold;
-    }
-
-    public void setThreshold(double threshold) {
-        this.threshold = threshold;
-    }
-
-    public double getLearningRate() {
-        return learningRate;
-    }
-
-    public void setLearningRate(double learningRate) {
-        this.learningRate = learningRate;
-    }
-
-    public int getMaxIter() {
-        return maxIter;
-    }
-
-    public void setMaxIter(int maxIter) {
-        this.maxIter = maxIter;
-    }
-
-    public double getIntercept() {
-        return intercept;
-    }
-
-    public RealVector getCoefficients() {
-        return coefficients;
-    }
 }
