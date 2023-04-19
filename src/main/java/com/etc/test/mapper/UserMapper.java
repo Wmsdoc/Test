@@ -15,6 +15,13 @@ public interface UserMapper {
     List<User> queryAll();
 
     /**
+     * 登录
+     *
+     * @return
+     */
+    User login(String userName,String password);
+
+    /**
      * 增加用户
      *
      * @return
