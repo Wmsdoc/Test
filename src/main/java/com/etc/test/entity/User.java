@@ -1,6 +1,5 @@
 package com.etc.test.entity;
 
-import jakarta.annotation.sql.DataSourceDefinition;
 import lombok.Data;
 
 @Data

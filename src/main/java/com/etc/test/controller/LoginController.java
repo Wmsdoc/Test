@@ -15,7 +15,7 @@ public class LoginController {
 
     /**
      * 登录界面
-     * @return
+     * @return login.html
      */
     @RequestMapping("/login")
     public String login(){
