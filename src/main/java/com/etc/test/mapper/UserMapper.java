@@ -10,35 +10,35 @@ public interface UserMapper {
     /**
      * 查询所有用户
      *
-     * @return
+     * @return List<User>
      */
     List<User> queryAll();
 
     /**
      * 登录
      *
-     * @return
+     * @return User
      */
     User login(String userName,String password);
 
     /**
      * 增加用户
      *
-     * @return
+     * @return int
      */
     int insert(User user);
 
     /**
      * 修改用户
      *
-     * @return
+     * @return int
      */
     int update(User user);
 
     /**
      * 删除用户
      *
-     * @return
+     * @return int
      */
     int delete(int userId);
 }
