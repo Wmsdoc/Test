@@ -24,12 +24,20 @@
             <td th:text="${user.userName}"></td>
             <td th:text="${user.password}"></td>
             <td>
-                <a class="btn btn-primary" th:href="@{'/update/'+${user.userId}}">更改</a>
-                <a class="btn btn-danger" th:href="@{'/delete/'+${user.userId}}">删除</a>
+                <a class="btn btn-primary" th:href="@{'/update/'+${user.userId}}">更改(未实现)</a>
+                <a class="btn btn-danger" th:href="@{'/delete/'+${user.userId}}">删除(未实现)</a>
             </td>
         </tr>
         </tbody>
     </table>
+    <h1>文件上传Test</h1>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="file">
+        <input type="submit" value="上传">
+    </form>
+    <form action="/download" method="get">
+        <input type="submit" value="下载">
+    </form>
 </div>
 </body>
 </html>

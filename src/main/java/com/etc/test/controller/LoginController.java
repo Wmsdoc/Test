@@ -24,6 +24,12 @@ public class LoginController {
 
 
 
+    /**
+     * 登录验证
+     * @param userName String类型
+     * @param password String类型
+     * @return user/list.html || login.html
+     */
     @GetMapping("/dologin")
     public String dologin(@RequestParam("userName") String userName,@RequestParam("password") String password){
         Boolean result = userService.login(userName, password);
