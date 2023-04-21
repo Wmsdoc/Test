@@ -17,7 +17,7 @@ import java.util.UUID;
 @Controller
 public class FileController {
     // 上传后的文件保存路径，同时也是文件下载的路径
-    @Value("${file.Path}")
+    @Value("${file.path}")
     String filePath;
 
     @PostMapping("/upload")

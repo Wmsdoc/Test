@@ -38,6 +38,27 @@
     <form action="/download" method="get">
         <input type="submit" value="下载">
     </form>
+    <button id="target" onclick="test()">在线预览</button>
 </div>
 </body>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/js-base64@3.6.0/base64.min.js"></script>
+<script>
+
+
+        function test(){
+            var url = 'http://127.0.0.1:8080/facereport/static/captured/ae93d524-78b0-40ec-9ee2-0055c2f73e38.docx'; //要预览文件的访问地址
+            window.open('http://127.0.0.1:8012/onlinePreview?url='+encodeURIComponent(Base64.encode(url)));
+        }
+        $("botton").click(function () {
+            // $.ajax({
+            //     url: "/download",
+            //     type: "get",
+            //     success: function (data) {
+            //         console.log(data);
+            //         var url = "http://localhost:8080/download";
+            //         window.open(url);
+            //     }
+            // })
+        })
+</script>
 </html>
