@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.etc.test.mapper.WorkSummaryMapper">
+    <insert id="insert" parameterType="WorkSummary">
+        INSERT INTO
+            work_summary
+        VALUES
+            (#{summaryId},#{docId},
+             #{patientId},#{summaryTitle},
+             #{summaryContent},NOW(),
+             #{summaryState});
+    </insert>
+</mapper>

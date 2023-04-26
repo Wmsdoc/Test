@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.etc.test.mapper.LogSystemMapper">
+    <sql id="Base_Column_List">
+        LOG_ID AS logId,
+        OPERATOR_TIME AS operatorTime,
+        OPERATOR_ID AS operatorId,
+        OPERATOR_NAME AS operatorName,
+        OPERATION_CONTENT AS operatorContent
+    </sql>
+    <select id="queryAll" resultType="LogSystem">
+        SELECT
+            <include refid="Base_Column_List"></include>
+        FROM
+            log_sys
+        ORDER BY OPERATOR_TIME DESC
+    </select>
+    <insert id="insert">
+        INSERT INTO log_sys
+        VALUES
+            (#{id},NOW(),#{docId},#{docName},#{content})
+    </insert>
+</mapper>

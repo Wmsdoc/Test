@@ -1,4 +1,4 @@
-package com.etc.test.util;
+package com.etc.test.util.LogisticsRegression;
 public class Main {
 
     public static void main(String[] args) {

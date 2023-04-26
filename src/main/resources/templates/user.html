@@ -32,13 +32,19 @@
     </table>
     <h1>文件上传Test</h1>
     <form action="/upload" method="post" enctype="multipart/form-data">
-        <input type="file" name="file">
+        <input type="file" name="file"><br>
+        <input type="text" name="summaryContent" value="你好"><br>
+        <input type="text" name="operatorId" value="044756b6-3d45-038a-cf4e-c316591d3085"><br>
+        <input type="text" name="operatorName" value="石杰宏"><br>
         <input type="submit" value="上传">
     </form>
+    <br>
+    <h1>文件下载Test</h1>
     <form action="/download" method="get">
         <input type="submit" value="下载">
     </form>
     <button id="target" onclick="test()">在线预览</button>
+    <button  onclick="listFile()">列出文件</button>
 </div>
 </body>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/js-base64@3.6.0/base64.min.js"></script>
@@ -48,6 +54,9 @@
         function test(){
             var url = 'http://127.0.0.1:8080/facereport/static/captured/ae93d524-78b0-40ec-9ee2-0055c2f73e38.docx'; //要预览文件的访问地址
             window.open('http://127.0.0.1:8012/onlinePreview?url='+encodeURIComponent(Base64.encode(url)));
+        }
+        function listFile(){
+            window.open('http://127.0.0.1:8012/listFiles');
         }
         $("botton").click(function () {
             // $.ajax({

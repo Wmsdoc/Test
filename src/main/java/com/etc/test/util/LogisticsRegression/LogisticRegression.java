@@ -1,4 +1,4 @@
-package com.etc.test.util;
+package com.etc.test.util.LogisticsRegression;
 
 import lombok.Data;
 import org.apache.commons.math3.linear.ArrayRealVector;
